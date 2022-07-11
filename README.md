@@ -36,6 +36,8 @@ iex> ClientImporter.CSVParser.parse("priv/repo/csv/source_data/client_import.csv
 
 This will result in a de-duped file created in `"priv/repo/csv/cleaned_data/.."`
 
+Note: there is an example file for import provided here: `"priv/repo/csv/source_data/client_import.csv"`
+
 _Troubleshooting: you may need to run `recompile` in iex instance in terminal if you find it unable to run the module function_
 ## Testing
 
