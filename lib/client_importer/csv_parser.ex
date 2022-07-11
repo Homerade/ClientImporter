@@ -19,7 +19,7 @@ defmodule ClientImporter.CSVParser do
         end)
         |> CSV.dump_to_iodata()
 
-      File.write!("priv/repo/csv/scrubbed_data/clients_by_unique_email.csv", unique_items)
+      File.write!("priv/repo/csv/cleaned_data/clients_by_unique_email.csv", unique_items)
     rescue
       e ->
         IO.inspect(e)
@@ -34,7 +34,7 @@ defmodule ClientImporter.CSVParser do
         |> Enum.uniq_by(fn [_, _, _, phone] -> check_is_binary(phone) end)
         |> CSV.dump_to_iodata()
 
-      File.write!("priv/repo/csv/scrubbed_data/clients_by_unique_phone.csv", unique_items)
+      File.write!("priv/repo/csv/cleaned_data/clients_by_unique_phone.csv", unique_items)
     rescue
       e ->
         IO.inspect(e)
@@ -50,7 +50,7 @@ defmodule ClientImporter.CSVParser do
         |> Enum.uniq_by(fn [_, _, _, phone] -> check_is_binary(phone) end)
         |> CSV.dump_to_iodata()
 
-      File.write!("priv/repo/csv/scrubbed_data/clients_by_unique_phone_and_email.csv", unique_items)
+      File.write!("priv/repo/csv/cleaned_data/clients_by_unique_phone_and_email.csv", unique_items)
     rescue
       e ->
         IO.inspect(e)
